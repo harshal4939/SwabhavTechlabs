@@ -50,7 +50,6 @@ public class NumberGuesser {
 		Scanner sc = new Scanner(System.in);
 		int maxtries = 6;
 		randomnumber = randomNumberGenerator();
-		System.out.println(randomnumber);
 		while (flag == false) {
 			if (turns >= maxtries) {
 				System.out.println("Sorry your 6 guesses have finished. Better luck next time loser.");
@@ -65,6 +64,11 @@ public class NumberGuesser {
 			}
 		}
 		return turns;
+	}
+	private static void resetGame() {
+		flag = false;
+		turns = 0;
+		successflag=0;
 	}
 
 	public static void main(String[] args) {
@@ -110,16 +114,9 @@ public class NumberGuesser {
 					System.out.println("Congratulations " + player1name + " ! You won");
 				}
 			}
-
 			System.out.println("Press 1 to play or press 0 to exit the game.");
 			choice = sc.nextInt();
 			resetGame();
 		}
-	}
-
-	private static void resetGame() {
-		flag = false;
-		turns = 0;
-		successflag=0;
 	}
 }
